@@ -8,7 +8,7 @@ Here is my reading list to join the NLP/AI/ML field.
 - "The Book of Why: The New Science of Cause and Effect" by Pearl, Judea is a good introduction to Causality (more accessible than the big "Causality: Models, Reasoning and Inference")
 - "Reinforcement Learning: An Introduction" by Richard S. Sutton and Andrew G. Barto (http://incompleteideas.net/book/the-book.html) is a great ressource to get an introductory exposure to Reinforcement Learning
 - Natural Language Processing: three great ressources I've read with interest:
-	- Kyungyun Cho's lecture notes on "Natural Language Processing with Representation Learning" are great: https://github.com/nyu-dl/NLP_DL_Lecture_Note/blob/master/lecture_note.pdf
+	- Kyunghyun Cho's lecture notes on "Natural Language Processing with Representation Learning" are great: https://github.com/nyu-dl/NLP_DL_Lecture_Note/blob/master/lecture_note.pdf
 	- Yoav Goldberg's book on "Neural Network Methods in Natural Language Processing" (https://www.amazon.com/Language-Processing-Synthesis-Lectures-Technologies/dp/1627052984) is nice too (see also an older free version here https://arxiv.org/abs/1510.00726)
 	- Jacob Eisenstein's textbook on "Natural Language Processing" is also a very exhaustive read (https://github.com/jacobeisenstein/gt-nlp-class/blob/master/notes/eisenstein-nlp-notes.pdf)
 
