@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #333;
+}
+
+
+/* Layout */
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+h1 {
+    font-size: 34px;
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    font-weight: normal;
+    font-style: italic;
+    color: #999;
+    font-size: 18px;
+    padding: 0;
+    margin: 5px 0 10px 0;
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+.top-row {
+    display: grid;
+    /* grid-template-columns: repeat(12, 1fr); */
+}
+
+.row {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+a {
+    color: #1772d0;
+    text-decoration: none;
+}
+
+a:focus,
+a:hover {
+    color: #f09228;
+    text-decoration: none;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+strong {
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+heading {
+    font-family: sans-serif;
+    font-size: 24px;
+}
+
+papertitle {
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 700
+}
+
+venue {
+    font-family: sans-serif;
+    font-style: italic
+}
+
+name {
+    font-family: sans-serif;
+    font-size: 40px;
+}
+
+email {
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #666;
+}
+
+.one {
+    width: 160px;
+    height: 160px;
+    position: relative;
+}
+
+.two {
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    transition: opacity .2s ease-in-out;
+    -moz-transition: opacity .2s ease-in-out;
+    -webkit-transition: opacity .2s ease-in-out;
+}
+
+.fade {
+    transition: opacity .2s ease-in-out;
+    -moz-transition: opacity .2s ease-in-out;
+    -webkit-transition: opacity .2s ease-in-out;
+}
+
+span.highlight {
+    background-color: #ffffd0;
+}
+
+.iico {
+    width: 40px;
+    height: 40px;
+}
+
+#demail {
+    margin-top: 10px;
+    color: #555;
+    opacity: 0;
+    transition: opacity 0.7s;
+}
+
+#dhead {
+    margin-top: 20px;
+}
+
+#dpic {
+    grid-column: span 6;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#dpic img {
+    width: 240px;
+    height: 240px;
+    border-radius: 120px;
+}
+
+@media (max-width: 991px) {
+    #dpic {
+        grid-column: span 12;
+        text-align: center;
+    }
+    #ddesc {
+        grid-column: span 12;
+        padding-top: 20px;
+        text-align: center;
+    }
+}
+
+#ddesc {
+    padding-top: 20px;
+    padding-left: 20px;
+    text-align: center;
+}
+
+#bottom {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    text-align: center;
+    color: #666;
+}
