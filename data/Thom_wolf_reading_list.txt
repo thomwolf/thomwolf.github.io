@@ -1,6 +1,7 @@
 My self-educational approach is usually to get a few rather exhaustive books and read them for cover to cover.
 
-Here is my reading list to join the NLP/AI/ML field.
+Here is the reading list I used to join the NLP/AI/ML field in 2016-2017, coming from a physics and law background (see my bio on my website).
+Keep in mind that this was before the ChatGPT/transformers/diffusion revolutions:
 - The "Deep Learning" Book by Ian Goodfellow, Yoshua Bengio and Aaron Courville (https://www.deeplearningbook.org/) is a good ressource to get a quick overview of the current tools.
 - "Artificial Intelligence: A Modern Approach" by Stuart Russell and Peter Norvig (http://aima.cs.berkeley.edu/) is a great ressource for all pre-neural-network tools and methods.
 - "Machine Learning: A Probabilistic Perspective" by Kevin P. Murphy (https://www.cs.ubc.ca/~murphyk/MLbook/) is a great ressource to go deeper in the probabilistic approach and get a good exposure to Bayesian tools.
@@ -12,7 +13,14 @@ Here is my reading list to join the NLP/AI/ML field.
 	- Yoav Goldberg's book on "Neural Network Methods in Natural Language Processing" (https://www.amazon.com/Language-Processing-Synthesis-Lectures-Technologies/dp/1627052984) is nice too (see also an older free version here https://arxiv.org/abs/1510.00726)
 	- Jacob Eisenstein's textbook on "Natural Language Processing" is also a very exhaustive read (https://github.com/jacobeisenstein/gt-nlp-class/blob/master/notes/eisenstein-nlp-notes.pdf)
 
-It's also good to complement this with a few online courses depending on what field you feel you should be diving deeper into.
+I also complemented this with a few online courses.
 I took the following classes:
 - Computational Probability and Inference (6.008.1x) from edx (https://courses.edx.org/courses/course-v1:MITx+6.008.1x+3T2016/course/)
 - Probabilistic Graphical Models Specialization from coursera (https://www.coursera.org/specializations/probabilistic-graphical-models)
+
+If you join the field after the revolution of transformers and large scale training probably you will possibly want to follow a different path.
+Here a few advices in 2024:
+- read our book on NLP and transformers. It predate ChatGPT but it's still super relevant and goes up to training a LLM at the end: https://www.oreilly.com/library/view/natural-language-processing/9781098136789/
+- take a couple of online classes on deep-learning from well-know people in the field
+- you can still read a couple of books from the above list for your general culture, in particular I still think "Information Theory, Inference and Learning Algorithms" is a gem
+- join Hugging Face to learn by doing :)
