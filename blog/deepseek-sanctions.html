@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+    <meta name=viewport content="width=800">
+    <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>The Future of Natural Language Processing - Thomas Wolf's Blog</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../blog.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <div class="container">
+        <div class="top-row">
+            <div id="ddesc">
+                <h1><a href="../index.html" class="home-link">Thomas Wolf</a></h1>
+                <div class="blog-nav">
+                    <a href="../index.html">Home</a> / 
+                    <a href="blog.html">Blog</a> /
+                    <span>🐳 Some notes on "DeepSeek and export control"</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container blog-post-container">
+        <article class="blog-post-content">
+            <header>
+                <h1>🐳 Some notes on "DeepSeek and export control"</h1>
+                <div class="post-meta">
+                    <time>January 31, 2025</time>
+                    <span class="reading-time">5 min read</span>
+                    <span class="category">DeepSeek</span>
+                </div>
+            </header>
+
+            <div class="post-body">
+                <p>
+                Finally took time to go over Dario's essay on DeepSeek and export control and to be honest it was quite painful to read. And I say this as a great admirer of Anthropic and big user of Claude*
+            </p><p>
+                The first half of the essay reads like a lengthy attempt to justify that closed-source models are still significantly ahead of DeepSeek. However, it mostly refers to internal unpublished evals which limit the credit you can give it, and statements like « DeepSeek-V3 is close to SOTA models and stronger on some very narrow tasks » transforming in a general conclusion « DeepSeek-V3 is actually worse than those US frontier models — let’s say by ~2x on the scaling curve » left me generally doubtful. The same applies to the takeaway that all discoveries and efficiency improvements of DeepSeek have been discovered long ago by closed-models companies, this statement mostly resulting from a comparison of DeepSeek openly published $6M training numbers with some vague « few $10M » on Anthropic side without providing much more details. I have no doubts the Anthropic team is extremely talented and I’ve regularly shared how impressed I am with Sonnet 3.5 but this longwinded comparison of open research with vague closed research and undisclosed evals has left me less convinced of their lead than I was before I reading it.
+            </p><p>
+
+                Even more frustrating was the second half of the essay which dive into the US-China race scenario and totally misses the point that the DeepSeek model is open-weights, and largely open-knowledge due to its detailed tech report (and feel free to follow Hugging Face’s open-r1 reproduction project for the remaining non-public part: the synthetic dataset). If both DeepSeek and Anthropic models had been closed source, yes the arm-race interpretation could have make sense but having one of the model freely widely available for download and with detailed scientific report renders the whole « close-source arm-race competition » argument artificial and unconvincing in my opinion.
+            </p><p>
+
+                Here is the thing: open-source knows no border. Both in its usage and its creation.
+            </p><p>
+
+                Every company in the world, be it in Europe, Africa, South-America or the USA can now directly download and use DeepSeek without sending data to a specific country (China for instance) or depending on a specific company or server for running the core part of its technology.
+            </p><p>
+
+                And just like most open-source library in the world are typically built by contributors from all over the world, we’ve already seen several hundred derivative models on the Hugging Face hub created everywhere in the world by teams adapting the original model to their specific use cases and explorations.
+            </p><p>
+
+                What's more, with the open-r1 reproduction and the DeepSeek paper, the coming months will clearly see many open-source reasoning models being released by teams from all over the world. Just today, two other teams, AllenAI in Seattle and Mistral in Paris both independently released open-source base models (Tülu and Small3) which are already challenging the new state-of-the-art (with AllenAI indicating that its Tülu model surpasses the performance of DeepSeek-V3).
+            </p><p>
+
+                And the scope is even much broader than this geographical aspect. Here is the thing we don’t talk nearly enough about: open-source will be more and more essential for our… safety!
+            </p><p>
+
+                As AI becomes central to our lives, resiliency will increasingly become a very important element of this technology. Today we’re dependent on internet access for almost everything. Without access to the internet, we lose all our social media/news feeds, can’t order a taxi, book a restaurant, or reach someone on WhatsApp. Now imagine an alternate world to ours where all the data transiting through the internet would have to go through a single company’s data centers. The day this company suffers a single outage, the whole world would basically stop spinning (picture the recent CrowdStrike outage magnified a millionfold).
+            </p><p>
+
+                Soon, as AI assistants and AI technology permeate our whole life to simplify many of our online and offline tasks, we (and companies using AI) will start to depend more on more on this technology for our daily activities and we will similarly start to find annoying or even painful any downtime in these AI assistants from outages.
+            </p><p>
+
+                The most optimal way to avoid future downtime situations will be to build resilience deep in our technological chain.
+            </p><p>
+
+                Open-source has many advantages like shared training costs, tunability, control, ownership, privacy but one of its most fundamental virtue in the long term –as AI becomes deeply embedded in our world– will likely be its strong resilience. It is one of the most straightforward and cost-effective ways to easily distribute compute across many independent providers and to even run models locally and on device with minimal complexity.
+            </p><p>
+
+                More than national prides and competitions, I think it’s time to start thinking globally about the challenges and social changes that AI will bring everywhere in the world. And open-source technology is likely our most important asset for safely transitioning to a resilient digital future where AI is integrated into all aspects of society.
+            </p><p>
+
+                *Claude is my default LLM for complex coding. I also love its character with hesitations and pondering, like a prelude to the chain-of-thoughts of more recent reasoning models like DeepSeek generations. 
+            </p>
+            
+
+                <div class="post-footer">
+                    <div class="tags">
+                        <span class="tag">DeepSeek</span>
+                        <span class="tag">AI</span>
+                        <span class="tag">open-source</span>
+                        <span class="tag">US-China</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <div class="container">
+        <div id="bottom" class="row">
+            Copyright Thomas Wolf 2017-2025
+        </div>
+    </div>
+
+</body>
+</html>

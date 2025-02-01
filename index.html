@@ -28,10 +28,12 @@
             <div id="ddesc">
                 <div id="dico">
                     <a href="https://twitter.com/Thom_Wolf"><img src="images/twitter.svg" class="iico" /></a>
+                    <a href="https://bsky.app/profile/thomwolf.bsky.social"><img src="images/bluesky.svg" class="iico" /></a>
                     <a href="https://www.threads.net/@thomwolf"><img src="images/meta-threads.svg" class="iico" /></a>
                     <a href="https://github.com/thomwolf"><img src="images/github.svg" class="iico" /></a>
                     <a href="https://www.linkedin.com/in/thomas-wolf-a056857/"><img src="images/linkedin.svg" class="iico" /></a>
                     <a href="https://medium.com/@Thomwolf"><img src="images/medium.svg" class="iico" /></a>
+                    <a href="blog/blog.html"><img src="images/blog.svg" class="iico" /></a>
                 </div>
             </div>
         </div>
@@ -67,6 +69,45 @@
                 my interest for Machine Learning and Deep Learning. I started my online education in AI/ML reading <a href="data/Thom_wolf_reading_list.txt">books and following online courses</a>. About year later, one of my friend asked
                 me if I wanted to start something crazy ambitious with <a href="https://huggingface.co/">Hugging Face</a>, and there I was, doing science and coding again and having a lot of fun!
             </div>
+        </div>
+        <hr>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <heading><a href="blog/blog.html">Blog</a></heading>
+        </div>
+        <div class="row">
+            I like to explain what I have learned and this has lead to a few blog posts that were quite interesting to other as well I guess (they totalise over a quarter million views at the end of 2018). I will try to continue writing things like that when
+            I find the time. I used to be a teacher during my PhD and I do miss teaching. Blogging is my substitute. A couple of notable posts:
+                <li>
+                    <a href="blog/deepseek-sanctions.html">
+                        <papertitle>🐳 Some notes on "DeepSeek and export control" </papertitle>
+                    </a>
+                    Finally took time to go over Dario's essay on DeepSeek and export control and wrote some notes. I mostly disagree and I think it missed the point.
+                </li>
+                <li>
+                    <a href="https://medium.com/huggingface/training-larger-batches-practical-tips-on-1-gpu-multi-gpu-distributed-setups-ec88c3e51255">
+                        <papertitle>💥 Training Neural Nets on Larger Batches: Practical Tips for 1-GPU, Multi-GPU & Distributed setups</papertitle>
+                    </a>
+                    I've spent most of 2018 training models that could barely fit 1-4 samples/GPU. But SGD usually needs more than few samples/batch for decent results. I wrote a post gathering practical tips I use, from simple tricks to multi-GPU code & distributed setups
+                </li>
+                <li>
+                    <a href="https://medium.com/huggingface/learning-meaning-in-natural-language-processing-the-semantics-mega-thread-9c0332dfe28e">
+                        <papertitle>⛵ Learning Meaning in Natural Language Processing — The Semantics Mega-Thread</papertitle>
+                    </a>
+                    A summary, overview and map of a huge discussion on learning meaning in NLP that happened on Twitter in August 2018 with more than a 100 comments and great inputs from Matt Gardner, Yoav Goldberg, Sam Bowman, Emily M. Bender, Graham Neubig, Jeremy Howard,
+                    Tal Linzen, Jacob Andreas, Ryan D. Cotterell ...
+                </li>
+                <li>
+                    <a href="https://medium.com/huggingface/100-times-faster-natural-language-processing-in-python-ee32033bdced">
+                        <papertitle>🚀 100 Times Faster Natural Language Processing in Python</papertitle>
+                    </a>
+                    How you can make your Python NLP module 50-100 times faster by use spaCy's internals and a bit of Cython magic! Womes with a Jupyter notebook with examples processing over 80 millions words per sec.
+                </li>
+                <li> ...
+                </li>
+            </ul>
         </div>
         <hr>
     </div>
@@ -112,40 +153,6 @@
                 </li>
                 <li>
                     <b>Magic Sand</b> a software for operating an augmented reality sandbox - <a href="https://github.com/thomwolf/magic-sand"> repository</a> - <a href="https://imgur.com/gallery/Q86wR"> tutorial</a>
-                </li>
-                <li> ...
-                </li>
-            </ul>
-        </div>
-        <hr>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <heading>Blog</heading>
-        </div>
-        <div class="row">
-            I like to explain clearly what I have learned and this has lead to a few blog posts that were quite interesting to other as well I guess (they totalise over a quarter million views at the end of 2018). I will try to continue writing things like that when
-            I find the time. I used to be a teacher during my PhD and I do miss teaching. Blogging is my substitute. A couple of notable posts:
-            <ul>
-                <li>
-                    <a href="https://medium.com/huggingface/training-larger-batches-practical-tips-on-1-gpu-multi-gpu-distributed-setups-ec88c3e51255">
-                        <papertitle>💥 Training Neural Nets on Larger Batches: Practical Tips for 1-GPU, Multi-GPU & Distributed setups</papertitle>
-                    </a>
-                    I've spent most of 2018 training models that could barely fit 1-4 samples/GPU. But SGD usually needs more than few samples/batch for decent results. I wrote a post gathering practical tips I use, from simple tricks to multi-GPU code & distributed setups
-                </li>
-                <li>
-                    <a href="https://medium.com/huggingface/learning-meaning-in-natural-language-processing-the-semantics-mega-thread-9c0332dfe28e">
-                        <papertitle>⛵ Learning Meaning in Natural Language Processing — The Semantics Mega-Thread</papertitle>
-                    </a>
-                    A summary, overview and map of a huge discussion on learning meaning in NLP that happened on Twitter in August 2018 with more than a 100 comments and great inputs from Matt Gardner, Yoav Goldberg, Sam Bowman, Emily M. Bender, Graham Neubig, Jeremy Howard,
-                    Tal Linzen, Jacob Andreas, Ryan D. Cotterell ...
-                </li>
-                <li>
-                    <a href="https://medium.com/huggingface/100-times-faster-natural-language-processing-in-python-ee32033bdced">
-                        <papertitle>🚀 100 Times Faster Natural Language Processing in Python</papertitle>
-                    </a>
-                    How you can make your Python NLP module 50-100 times faster by use spaCy's internals and a bit of Cython magic! Womes with a Jupyter notebook with examples processing over 80 millions words per sec.
                 </li>
                 <li> ...
                 </li>
@@ -216,7 +223,7 @@
 
     <div class="container">
         <div id="bottom" class="row">
-            Copyright Thomas Wolf 2017-2022
+            Copyright Thomas Wolf 2017-2025
         </div>
     </div>
 
