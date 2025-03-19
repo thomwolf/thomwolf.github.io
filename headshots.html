@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Carousel with Download</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+        
+        .carousel-container {
+            position: relative;
+            max-width: 800px;
+            width: 100%;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .carousel-slide {
+            min-width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .carousel-slide img {
+            max-width: 100%;
+            max-height: 500px;
+            object-fit: contain;
+        }
+        
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 20px;
+        }
+        
+        .nav-button {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 18px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+        
+        .nav-button:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
+        
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+        }
+        
+        .indicator {
+            width: 12px;
+            height: 12px;
+            background-color: #ddd;
+            border-radius: 50%;
+            margin: 0 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .indicator.active {
+            background-color: #555;
+        }
+        
+        .download-button {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            z-index: 10;
+        }
+        
+        .download-button:hover {
+            background-color: #45a049;
+        }
+        
+        .download-button svg {
+            width: 16px;
+            height: 16px;
+        }
+        
+        .caption {
+            position: absolute;
+            bottom: 60px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel-container">
+        <div class="carousel-track">
+            <!-- Image slides will be added here by JavaScript -->
+        </div>
+        
+        <div class="carousel-nav">
+            <button class="nav-button prev-button">&lt;</button>
+            <button class="nav-button next-button">&gt;</button>
+        </div>
+        
+        <div class="carousel-indicators">
+            <!-- Indicators will be added here by JavaScript -->
+        </div>
+        
+        <div class="caption"></div>
+        
+        <button class="download-button">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            Download
+        </button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Configuration - Add your images here
+            const images = [
+                {
+                    src: "./headshots/3e8e8e30-a3bd-40fc-bd6e-3322d346ea57.jpeg",
+                    alt: "Speaker with headset",
+                    caption: "Conference presentation"
+                },
+                {
+                    src: "./headshots/000004.JPG",
+                    alt: "Professional headshot",
+                    caption: "Studio portrait"
+                },
+                {
+                    src: "./headshots/000005.JPG",
+                    alt: "Professional headshot",
+                    caption: "Studio portrait"
+                },
+                {
+                    src: "./headshots/000006.JPG",
+                    alt: "Professional headshot",
+                    caption: "Studio portrait"
+                },
+                {
+                    src: "./headshots/031424-3739 (1).jpg",
+                    alt: "Professional photo",
+                    caption: "March 2024 session"
+                },
+                {
+                    src: "./headshots/031424-3746 (1).jpg",
+                    alt: "Professional photo",
+                    caption: "March 2024 session"
+                },
+                {
+                    src: "./headshots/51986384765_1f145f8a7b_o.jpg",
+                    alt: "Conference photo",
+                    caption: "Speaking engagement"
+                },
+                {
+                    src: "./headshots/51986386035_37ce25e1cc_o.jpg",
+                    alt: "Conference photo",
+                    caption: "Speaking engagement"
+                },
+                {
+                    src: "./headshots/AI DEV 25 (1).png",
+                    alt: "AI Development presentation",
+                    caption: "AI DEV 25 Conference"
+                },
+                {
+                    src: "./headshots/AI DEV 25_ (1).png",
+                    alt: "AI Development presentation",
+                    caption: "AI DEV 25 Conference"
+                },
+                {
+                    src: "./headshots/AM250122_The Dawn of Artificial General Intelligence-_©WEF_MattiasNutt_MN9_5852.jpg",
+                    alt: "WEF AGI presentation",
+                    caption: "World Economic Forum - The Dawn of AGI"
+                },
+                {
+                    src: "./headshots/AM250122_The Dawn of Artificial General Intelligence-_©WEF_MattiasNutt_MN9_5861.jpg",
+                    alt: "WEF AGI presentation",
+                    caption: "World Economic Forum - The Dawn of AGI"
+                },
+                {
+                    src: "./headshots/AM250122_The Dawn of Artificial General Intelligence-_©WEF_MattiasNutt_MN9_5899.jpg",
+                    alt: "WEF AGI presentation",
+                    caption: "World Economic Forum - The Dawn of AGI"
+                },
+                {
+                    src: "./headshots/AM250122_The Dawn of Artificial General Intelligence-_©WEF_MattiasNutt_MN9_5902.jpg",
+                    alt: "WEF AGI presentation",
+                    caption: "World Economic Forum - The Dawn of AGI"
+                },
+                {
+                    src: "./headshots/AM250122_The Dawn of Artificial General Intelligence-_©WEF_MattiasNutt_MN9_5910.jpg",
+                    alt: "WEF AGI presentation",
+                    caption: "World Economic Forum - The Dawn of AGI"
+                },
+                {
+                    src: "./headshots/AM250122_The Dawn of Artificial General Intelligence-_©WEF_MattiasNutt_MN9_5915.jpg",
+                    alt: "WEF AGI presentation",
+                    caption: "World Economic Forum - The Dawn of AGI"
+                },
+                {
+                    src: "./headshots/de-standaard-article.jpeg",
+                    alt: "De Standaard article photo",
+                    caption: "De Standaard feature"
+                },
+                {
+                    src: "./headshots/IMG_3752.jpeg",
+                    alt: "Professional photo",
+                    caption: "Portrait"
+                },
+                {
+                    src: "./headshots/IMG_6330.jpeg",
+                    alt: "Professional photo",
+                    caption: "Portrait"
+                },
+                {
+                    src: "./headshots/IMG_63318clear.jpeg",
+                    alt: "Professional photo",
+                    caption: "Portrait - Clear version"
+                },
+                {
+                    src: "./headshots/P7244650.jpeg",
+                    alt: "Event photo",
+                    caption: "Speaking engagement"
+                },
+                {
+                    src: "./headshots/P9080485.jpeg",
+                    alt: "Event photo",
+                    caption: "Speaking engagement"
+                },
+                {
+                    src: "./headshots/profil_pic.jpg",
+                    alt: "Profile picture",
+                    caption: "Professional headshot"
+                },
+                {
+                    src: "./headshots/PyData-Amsterdam-2023-2088.jpeg",
+                    alt: "PyData Amsterdam presentation",
+                    caption: "PyData Amsterdam 2023"
+                },
+                {
+                    src: "./headshots/PyData-Amsterdam-2023-2104.jpeg",
+                    alt: "PyData Amsterdam presentation",
+                    caption: "PyData Amsterdam 2023"
+                },
+                {
+                    src: "./headshots/PyData-Amsterdam-2023-2130.jpeg",
+                    alt: "PyData Amsterdam presentation",
+                    caption: "PyData Amsterdam 2023"
+                },
+                {
+                    src: "./headshots/PyData-Amsterdam-2023-2149.jpeg",
+                    alt: "PyData Amsterdam presentation",
+                    caption: "PyData Amsterdam 2023"
+                },
+                {
+                    src: "./headshots/PyData-Amsterdam-2023-2166.jpeg",
+                    alt: "PyData Amsterdam presentation",
+                    caption: "PyData Amsterdam 2023"
+                },
+                {
+                    src: "./headshots/SmartNewWorld_Wolf_1.jpg",
+                    alt: "Smart New World event",
+                    caption: "Smart New World Conference"
+                },
+                {
+                    src: "./headshots/SmartNewWorld_Wolf_3.png",
+                    alt: "Smart New World event",
+                    caption: "Smart New World Conference"
+                },
+                {
+                    src: "./headshots/SmartNewWorld_Wolf_5.jpg",
+                    alt: "Smart New World event",
+                    caption: "Smart New World Conference"
+                },
+                {
+                    src: "./headshots/thom.png",
+                    alt: "Profile picture",
+                    caption: "Professional headshot"
+                },
+                {
+                    src: "./headshots/VT24-S3-12-00-Where Will GenAI Take Us in the Next Decade_FD_23322.jpg",
+                    alt: "GenAI Future presentation",
+                    caption: "The Future of GenAI Panel"
+                },
+                {
+                    src: "./headshots/VT24-S3-12-00-Where Will GenAI Take Us in the Next Decade_XF_23296.JPG",
+                    alt: "GenAI Future presentation",
+                    caption: "The Future of GenAI Panel"
+                },
+                {
+                    src: "./headshots/VT24-S3-12-00-Where Will GenAI Take Us in the Next Decade_XF_23326.JPG",
+                    alt: "GenAI Future presentation",
+                    caption: "The Future of GenAI Panel"
+                }
+            ];
+            
+            // Get DOM elements
+            const track = document.querySelector('.carousel-track');
+            const prevButton = document.querySelector('.prev-button');
+            const nextButton = document.querySelector('.next-button');
+            const indicators = document.querySelector('.carousel-indicators');
+            const downloadButton = document.querySelector('.download-button');
+            const captionElement = document.querySelector('.caption');
+            
+            let currentIndex = 0;
+            
+            // Create slides and indicators
+            images.forEach((image, index) => {
+                // Create slide
+                const slide = document.createElement('div');
+                slide.classList.add('carousel-slide');
+                
+                const img = document.createElement('img');
+                img.src = image.src;
+                img.alt = image.alt;
+                
+                slide.appendChild(img);
+                track.appendChild(slide);
+                
+                // Create indicator
+                const indicator = document.createElement('div');
+                indicator.classList.add('indicator');
+                if (index === 0) {
+                    indicator.classList.add('active');
+                }
+                
+                indicator.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateCarousel();
+                });
+                
+                indicators.appendChild(indicator);
+            });
+            
+            // Initial caption
+            if (images.length > 0) {
+                captionElement.textContent = images[0].caption;
+            }
+            
+            // Update carousel based on current index
+            function updateCarousel() {
+                // Update track position
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                
+                // Update indicators
+                document.querySelectorAll('.indicator').forEach((indicator, index) => {
+                    if (index === currentIndex) {
+                        indicator.classList.add('active');
+                    } else {
+                        indicator.classList.remove('active');
+                    }
+                });
+                
+                // Update caption
+                captionElement.textContent = images[currentIndex].caption;
+                
+                // Update download button
+                downloadButton.onclick = () => downloadImage(images[currentIndex].src, images[currentIndex].alt);
+            }
+            
+            // Navigation event listeners
+            prevButton.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                updateCarousel();
+            });
+            
+            nextButton.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % images.length;
+                updateCarousel();
+            });
+            
+            // Download functionality
+            function downloadImage(src, alt) {
+                // Create a temporary link
+                const link = document.createElement('a');
+                link.href = src;
+                
+                // Set the filename for download
+                link.download = alt.replace(/\s+/g, '_').toLowerCase() + '.jpg';
+                
+                // Append to the body, click, and remove
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+            
+            // Initialize download button
+            downloadButton.onclick = () => downloadImage(images[0].src, images[0].alt);
+            
+            // Add keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    prevButton.click();
+                } else if (e.key === 'ArrowRight') {
+                    nextButton.click();
+                }
+            });
+            
+            // Auto-advance (optional - uncomment to enable)
+            /*
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % images.length;
+                updateCarousel();
+            }, 5000); // Change slide every 5 seconds
+            */
+        });
+    </script>
+</body>
+</html>
