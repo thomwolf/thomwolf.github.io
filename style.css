@@ -52,15 +52,14 @@ h2 {
 }
 
 a {
-    color: #1772d0;
+    color: #2b68aa;
     text-decoration: none;
 }
 
-a:focus,
 a:hover {
-    color: #f09228;
-    text-decoration: none;
+    text-decoration: underline;
 }
+
 
 hr {
     border: 0;
