@@ -126,6 +126,34 @@ body {
     line-height: 1.6;
 }
 
+.hover-text {
+    position: relative;
+    border-bottom: 1px dotted #000;
+    cursor: help;
+}
+  
+.hover-note {
+    visibility: hidden;
+    width: 400px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+  
+.hover-text:hover .hover-note {
+    visibility: visible;
+    opacity: 1;
+}
+
 /* Post Footer */
 .post-footer {
     margin-top: 3rem;
