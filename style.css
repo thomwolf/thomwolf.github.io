@@ -12,8 +12,10 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto', Helvetica, Arial, sans-serif;
     font-weight: 700;
     line-height: 1.2;
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
+    /* margin-top: 0.5em;
+    margin-bottom: 0.5em; */
+    padding: 0;
+    margin: 5px 0 10px 0;
   }
   
   h1 {
@@ -64,7 +66,7 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 15px;
 }
 
-h1 {
+/* h1 {
     font-size: 34px;
     font-weight: normal;
     padding: 0;
@@ -78,7 +80,7 @@ h2 {
     font-size: 18px;
     padding: 0;
     margin: 5px 0 10px 0;
-}
+} */
 
 @media (min-width: 992px) {
     .container {
@@ -140,6 +142,12 @@ name {
 }
 
 email {
+    font-family: sans-serif;
+    font-size: 16px;
+    color: #666;
+}
+
+subtitle {
     font-family: sans-serif;
     font-size: 16px;
     color: #666;
