@@ -9,7 +9,11 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" type="text/css" href="../blog.css">
 	<!-- <link rel="stylesheet" type="text/css" href="../style.css"> -->
-	<link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	<!-- <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -30,13 +34,6 @@
 		<article class="blog-post-content">
 			<header>
 				<h1>🎠 Low Tech AI</h1>
-                <p>Intelligence at the intersection of simplicity and scale</p>
-				<div class="post-meta">
-					<time>May 14, 2025</time>
-					<span class="reading-time">15 min read</span>
-					<span class="category">low-tech</span>
-					<span class="category">ai</span>
-				</div>
 			</header>
 
 			<div class="post-body">
@@ -44,37 +41,37 @@
 <p>Lately, I've been thinking a lot about something I've begun calling "low-tech AI." It's not a formal term yet, but it neatly describes several distinct trends converging in the AI landscape. These trends might initially seem unrelated, but together they suggest a future in which sophisticated artificial intelligence quietly integrates into everyday technology stacks without demanding huge upgrades or high complexity.</p>
 
 
-<p><strong>Trend 1: Smaller Models, Same Intelligence</strong></p>
+<p><strong>First trend: Smaller Models, Increased Intelligence</strong></p>
 
 
-<p>A year or two ago, improving AI meant building bigger models—larger parameter counts, massive compute clusters, and huge energy budgets. Recently, this has shifted dramatically. Newer AI models, such as the Llama or Qwen series, achieve roughly the same performance as their predecessors but at one-tenth or even one-twentieth the size. Simultaneously, personal computing power keeps growing more affordable. A GPU today, costing a few hundred dollars, matches the power of what required tens of thousands just a short while ago.</p>
+<p>A couple years ago, improving AI meant building bigger models—larger parameter counts, massive compute clusters, and huge energy budgets. Recently, this has shifted dramatically. Newer AI models, exemplified in the Qwen, DeepSeek, Llama, Phi series, achieve roughly the same performance as their predecessors but at half, one-tenth or even one-twentieth the size. Simultaneously, personal computing power keeps growing more affordable. A GPU today, costing a few hundred dollars, matches the power of what required several thousands just a short while ago.</p>
 
 
-<p>This convergence means a fixed level of intelligence gets cheaper every year, shrinking down to fit increasingly modest hardware.</p>
+<p>Extrapolating along these two lines means a fixed level of intelligence gets cheaper every year, fit increasingly more affordable hardware.</p>
 
 
-<p><strong>Trend 2: Simplified Architecture</strong></p>
+<p><strong>Second trend: Simplified Architecture</strong></p>
 
 
-<p>The internal complexity of traditional software stacks often resembles a sprawling bureaucracy: countless branches, loops, and conditions. By contrast, AI inference is remarkably straightforward. It mostly involves linear algebra—vast tensor operations executed sequentially rather than conditionally.</p>
+<p>The internal complexity of traditional software stacks often resembles a sprawling bureaucracy: countless branches, loops, and conditions. By contrast, inference in an AI model is remarkably straightforward. It mostly involves linear algebra—vast tensor operations executed in a single sequentce rather than conditionally (even for Mixture-of-experts).</p>
 
 
-<p>Hardware designers have taken notice, simplifying chips specifically for these linear tasks. Companies like Cerebras, Groq, Etched, and Fractile are building specialized AI hardware stripped down to essentials, which run more efficiently and with fewer unexpected complications than traditional CPUs.</p>
+<p>Hardware designers have taken notice, simplifying chips drastically for these linear tasks. Companies like Cerebras, Groq, Etched, and Fractile are building specialized AI hardware stripped down to essentials, which run way more efficiently and with fewer unexpected complications than traditional CPUs.</p>
 
 
-<p><strong>Trend 3: Seamless Integration into Existing Systems</strong></p>
+<p><strong>Third trend: Seamless Integration into Existing Systems</strong></p>
 
 
-<p>One surprising benefit of language-based AI models is their inherent compatibility with legacy systems. Because these models train on vast collections of human-written text—including code, documentation, and protocols—they naturally understand and generate familiar interfaces. Integrating AI into existing systems thus requires little change, reducing friction and adoption barriers.</p>
+<p>One surprising benefit of language- and vision-based AI models is their inherent compatibility with legacy systems. Because these models are trained on vast collections of human-written text—including code, documentation, visual interfaces and protocols—they naturally understand and integrate with familiar interfaces. Carving in AI into existing software –and increasingly hardware– systems thus requires little change, reducing friction and adoption barriers.</p>
 
 
-<p>A bank running software from the early 2000s doesn't need to overhaul its entire infrastructure; instead, it might simply connect an AI interface to its existing transaction logs. Overnight, it gains capabilities previously unimaginable without disruptive upgrades.</p>
+<p>A bank running software from the early 2000s doesn't need to overhaul its entire infrastructure; instead, it might simply plug in an AI interface to its existing transaction logs or legacy software. Overnight, older system can gain capabilities previously unimaginable without disruptive upgrades.</p>
 
 
 <p><strong>Imagining the Possibilities</strong></p>
 
 
-<p>Imagine a small chip, drawing just five watts of power, running a model with billions of parameters that surpasses GPT-4 capabilities. Such a device could power autonomous drones, home assistants, or medical devices, all operating at low cost and minimal energy.</p>
+<p>Imagine a small chip, drawing just five watts of power, running a model with billions of parameters that surpasses GPT-4 capabilities. Such a device could power autonomous drones, home assistants, or even local AI devices, all operating at low cost and minimal energy.</p>
 
 
 <p>Alternatively, think of a small, traditional business—perhaps a manufacturing plant running software that's barely changed since the early 2000s. By adding just a small AI component to their existing stack, they might suddenly manage predictive maintenance, real-time inventory management, and complex optimizations without an expensive overhaul.</p>
@@ -86,12 +83,7 @@
 <p>This shift toward low-tech AI may lead to surprisingly rapid societal changes. We've already seen something analogous in how smartphones bypassed desktop computers in many regions around the world. Countries that never widely adopted wired infrastructure moved directly into mobile, leapfrogging intermediate steps. Low-tech AI could similarly allow societies or businesses to leap directly into advanced capabilities without incremental technology investments.</p>
 
 
-<p>It reminds me, in a way, of Lois McMaster Bujold's "Vorkosigan Saga," where a planet jumps directly from medieval technology to spaceships upon contact with a more advanced civilization. Hopefully, our own leap will be gentler—but equally transformative.</p>
-<div class="post-footer">
-	<div class="tags">
-		<span class="tag">low-tech</span>
-		<span class="tag">ai</span>
-</div>
+<p>PS: This technological leap reminds me of Lois McMaster Bujold's "Vorkosigan Saga," where Barrayar's society vaults from medieval feudalism directly to interstellar technology after reconnecting with the wider galaxy. May our journey be smoother, but equally revolutionary.</p>
 </div>
 </div>
 </article>
